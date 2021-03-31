@@ -7,17 +7,16 @@
         mc:Ignorable="d"
         Title="MyFirstGUI" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Button Grid.Column="0">Hi There...</Button>
-        <Button Grid.Column="1">How goes it.</Button>
-        <Button Grid.Column="0" Grid.Row="1">I'm well!</Button>
-        <Button Grid.Column="1" Grid.Row="1">Yourself?</Button>
+        <Button Height="100" Width="200" Content="Click Me" Background="PaleVioletRed">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="30"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>
