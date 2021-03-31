@@ -6,17 +6,9 @@
         xmlns:local="clr-namespace:WPF_01C"
         mc:Ignorable="d"
         Title="MyFirstGUI" Height="450" Width="800">
-    <Grid>
-        <Button Height="100" Width="200" Content="Click Me" Background="PaleVioletRed">
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="FontSize" Value="30"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-    </Grid>
+    <!-- Modes on binding: OneWay, TwoWay, OneWayToSource, OneTime -->
+    <StackPanel>
+        <TextBox Name="MyTextBox" Width="100" Margin="50" Text="{Binding ElementName=MySlider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Slider IsSnapToTickEnabled="True" Name="MySlider" Minimum="0" Maximum="100"></Slider>
+    </StackPanel>
 </Window>

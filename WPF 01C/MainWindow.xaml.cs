@@ -23,6 +23,8 @@ namespace WPF_01C
         public MainWindow()
         {
             InitializeComponent();
+            MySlider.Value = 30;
+            MyTextBox.Text = MySlider.Value.ToString();
         }
     }
 }
