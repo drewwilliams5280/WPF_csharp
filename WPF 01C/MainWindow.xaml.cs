@@ -24,30 +24,5 @@ namespace WPF_01C
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Thanks for clicking!");
-        }
-
-        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Mouse Button Up");
-        }
-
-        private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Released Tunneling event");
-        }
-
-        private void Button_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Left Mouse Button Went Down - Preview Mouse Down");
-        }
-
-        private void Button_PreviewMouseRightButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Right mouse button up - Released Tunneling event");
-        }
     }
 }
