@@ -23,6 +23,36 @@ namespace WPF___ListBox
         public MainWindow()
         {
             InitializeComponent();
+            List<Match> matches = new List<Match>();
+            matches.Add(new Match() { Team1 = "Bayern", Team2 = "Real Madrid", Score1 = 3, Score2 = 2, Completion = 85 });
+            matches.Add(new Match() { Team1 = "Arsenal", Team2 = "AS Roma", Score1 = 3, Score2 = 0, Completion = 65 });
+            matches.Add(new Match() { Team1 = "Barcelona", Team2 = "Man United", Score1 = 1, Score2 = 0, Completion = 23 });
+            matches.Add(new Match() { Team1 = "Juventus", Team2 = "Dortmund", Score1 = 1, Score2 = 1, Completion = 67 });
+            matches.Add(new Match() { Team1 = "PSG", Team2 = "Liverpool", Score1 = 1, Score2 = 2, Completion = 44 });
+
+            lbMatches.ItemsSource = matches;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(lbMatches.SelectedItem != null)
+            {
+                MessageBox.Show("Selected Match: " +
+                    (lbMatches.SelectedItem as Match).Team1 + " " +
+                    (lbMatches.SelectedItem as Match).Score1 + " - " +
+                    (lbMatches.SelectedItem as Match).Score2 + " " +
+                    (lbMatches.SelectedItem as Match).Team2 + " "
+                    );
+            }
+        }
+    }
+
+    public class Match
+    {
+        public int Score1 { get; set; }
+        public int Score2 { get; set; }
+        public string Team1 { get; set; }
+        public string Team2 { get; set; }
+        public int Completion { get; set; }
     }
 }
